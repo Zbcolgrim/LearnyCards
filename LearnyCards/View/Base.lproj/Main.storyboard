@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ahh-rD-Ugm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Learny Cards-->
+        <scene sceneID="fFn-uM-bJ2">
+            <objects>
+                <tableViewController id="UJQ-nk-0WB" customClass="LearnyTableViewController" customModule="LearnyCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mn7-mg-eAL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCell" id="3Zx-NA-kRh">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Zx-NA-kRh" id="Zab-rk-e27">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Ok4-5e-8w6" kind="show" identifier="updateNote" id="GEX-x0-7Ve"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UJQ-nk-0WB" id="7Kh-9C-axg"/>
+                            <outlet property="delegate" destination="UJQ-nk-0WB" id="lvb-yv-DWQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Learny Cards" id="EO0-Gk-NGn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MLb-Kn-G6v">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="UJQ-nk-0WB" id="UP0-tC-fgu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZp-lp-zmp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339" y="91"/>
+        </scene>
+        <!--Note View Controller-->
+        <scene sceneID="k9V-Mq-rJF">
+            <objects>
+                <viewController id="Ok4-5e-8w6" customClass="NoteViewController" customModule="LearnyCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KR6-ch-8MD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1J-Ti-DvD">
+                                <rect key="frame" x="12" y="100" width="390" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yeq-db-Mfo">
+                                <rect key="frame" x="12" y="132.5" width="390" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60784316059999999" green="0.109803915" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="u2r-5Q-ceH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="u2r-5Q-ceH" firstAttribute="trailing" secondItem="Yeq-db-Mfo" secondAttribute="trailing" constant="12" id="Gpa-kd-NwA"/>
+                            <constraint firstItem="Yeq-db-Mfo" firstAttribute="leading" secondItem="u2r-5Q-ceH" secondAttribute="leading" constant="12" id="J76-9i-IFU"/>
+                            <constraint firstItem="Yeq-db-Mfo" firstAttribute="top" secondItem="M1J-Ti-DvD" secondAttribute="bottom" constant="12" id="Mj4-OG-nvE"/>
+                            <constraint firstItem="M1J-Ti-DvD" firstAttribute="top" secondItem="u2r-5Q-ceH" secondAttribute="top" constant="12" id="SUh-ca-5De"/>
+                            <constraint firstItem="M1J-Ti-DvD" firstAttribute="leading" secondItem="u2r-5Q-ceH" secondAttribute="leading" constant="12" id="fgc-gw-2kK"/>
+                            <constraint firstItem="u2r-5Q-ceH" firstAttribute="trailing" secondItem="M1J-Ti-DvD" secondAttribute="trailing" constant="12" id="xNn-kJ-3v5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fap-m9-daN"/>
+                    <connections>
+                        <outlet property="phraseLabelView" destination="M1J-Ti-DvD" id="SOM-wD-rMw"/>
+                        <outlet property="translationLabelView" destination="Yeq-db-Mfo" id="QkK-P0-ZUf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nIz-pc-GIz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1178" y="90"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xuV-n4-QtH">
+            <objects>
+                <navigationController id="ahh-rD-Ugm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TcX-0o-uVv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UJQ-nk-0WB" kind="relationship" relationship="rootViewController" id="qzU-Jr-3SY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTp-rf-Y3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-550" y="91"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
